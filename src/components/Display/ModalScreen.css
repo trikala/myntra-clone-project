@@ -1,0 +1,25 @@
+.modal-wrapper{
+    display: flex;
+    padding: 10px;
+}
+.modal-img{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.modal-det{
+    padding: 30px;
+}
+
+.bname{
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+}
+
+.product{
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: capitalize
+}

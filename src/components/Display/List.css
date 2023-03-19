@@ -1,0 +1,47 @@
+.List-container{
+    width: 280px;
+}
+.List-wrapper{
+   display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 220px;
+    /* border: 1px solid black; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 10px;
+    margin: 20px;
+
+}
+.List-wrapper:hover{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.List-image{
+    height: 290px;
+    width: 100%;
+}
+.photo{
+    height: 290px;
+    padding: 5px;
+}
+.List-detail{
+    padding: 10px;
+}
+
+.heading{
+    text-transform: uppercase;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.wish{
+    width: 100%;
+    padding: 3px;
+    margin: 2px;
+    color: #ff6589;
+    border:1px solid #ff6589 ;
+    background-color: white;
+}
+.wish:hover{
+    background-color: #ff6589;
+    color: whitesmoke;
+}
