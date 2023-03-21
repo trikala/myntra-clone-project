@@ -1,12 +1,15 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import './ModalScreen.css';
 import { Data } from '../Data';
+import { CartContext } from '../../App';
 
 export function ModalScreen({ id }) {
-  // console.log(id);
+  const{cart,setCart}=useContext(CartContext);
   const Modal = Data.filter((data) => {
-    return id.includes(data.id)
+    // return id.includes(data.id)
+    return id==data.id
   })
+ 
   // console.log(Modal);
   return (
     <div className='modal-wrapper'>
@@ -30,6 +33,8 @@ export function ModalScreen({ id }) {
         <span>{val.price}</span>
         <br />
         <span >{val.size}</span>
+        <br />
+        <button className='' onClick={()=>setCart([...cart,id])}>Add to cart</button>
 
       </div>
       </>

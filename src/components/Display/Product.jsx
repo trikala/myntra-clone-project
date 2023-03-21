@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, } from 'react'
 import { List } from './List'
 import { Modal } from 'antd'
 import { ModalScreen } from './ModalScreen';
 import { Data } from '../Data';
 
 
-export function Product({ gender, sort, cat, search }) {
+export function Product({ gender, sort, cat, search, handleCartId }) {
 
     const [open, setOpen] = useState(false);
 
@@ -44,7 +44,6 @@ export function Product({ gender, sort, cat, search }) {
     const handleOpen = (e) => {
         setOpen(true)
         setId(e.target.id)
-        console.log(e.target.id);
     }
     // console.log(setId)
     // console.log(id);
@@ -59,17 +58,25 @@ export function Product({ gender, sort, cat, search }) {
                         <>
                             <div>
 
-                                <List photo={cal.imgscr} pname={cal.pname} product={cal.product} price={cal.price} handleOpen={handleOpen} 
-                                id={cal.id} />
-                               
+                                <List
+                                    photo={cal.imgscr}
+                                    pname={cal.pname}
+                                    product={cal.product}
+                                    price={cal.price}
+                                    handleOpen={handleOpen}
+                                    id={cal.id} 
+                                    handleCartId={handleCartId}
+                                />
+
 
                             </div>
                             <Modal open={open} onCancel={() => setOpen(false)} footer={false} >
                                 <ModalScreen
                                     id={id}
+
                                 />
                             </Modal >
-                        
+
 
                         </>
 
@@ -84,6 +91,5 @@ export function Product({ gender, sort, cat, search }) {
 
         </div>
     )
-    console.log(id);
 }
 

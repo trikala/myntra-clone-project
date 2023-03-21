@@ -1,11 +1,13 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import './List.css';
+import { WishListContext } from '../../App';
 
 export function List({ photo, pname, product, price, id ,handleOpen}) {
- 
+ const {data,setData}=useContext(WishListContext);
+//  console.log(data,'this is data list');
   return (
     <div className='List-container' >
-      <div className='List-wrapper'  >
+      <div className='List-wrapper' id={id} >
         <div className='List-image' onClick={handleOpen} >
           <img src={photo} alt="loading" id={id} className='photo' />
         </div>
@@ -17,12 +19,9 @@ export function List({ photo, pname, product, price, id ,handleOpen}) {
           <span>Rs {price}</span>
           <br />
           <br />
-          <button className='wish'>Add TO Wishlist</button>
-          <br />
-          <button className='wish'>Add To Cart</button>
+          <button className='wish' onClick={()=>setData([...data,id])}>Add To WishList</button>
         </div>
       </div>
     </div>
   )
 }
-
